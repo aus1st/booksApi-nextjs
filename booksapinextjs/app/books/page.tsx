@@ -43,7 +43,6 @@ export default async function Books() {
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum ipsum eaque architecto itaque veniam saepe ut commodi nemo velit libero aliquam iure soluta at, esse ducimus enim culpa animi? Repellat.</p>
                 </div>
                 <div className='pt-2 flex space-x-2 justify-center'>
-
                     <Link href={`/books/${b.id}`} className='bg-blue-600 text-white py-1 px-4 rounded-md'>Details</Link>
                     <Link href="#" className='bg-blue-600 text-white py-1 px-4 rounded-md'>Order</Link>
 
