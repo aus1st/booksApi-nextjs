@@ -2,6 +2,7 @@ import React from 'react'
 import { book } from '../models/book';
 import Image from 'next/image';
 import Link from 'next/link';
+import Auth from '../shared/auth';
 
 
 const baseUrl = 'https://simple-books-api.glitch.me/books'
@@ -54,6 +55,7 @@ export default async function Books() {
             ))
         }
       </ul>
+      <Auth></Auth>
     </div>
   )
 }

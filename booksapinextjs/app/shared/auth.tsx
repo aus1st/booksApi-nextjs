@@ -6,14 +6,22 @@ const auth: client = {
     clientEmail: 'siddiqui@gmail.com'
 }
 
-let userToken = '';
+type userToken = {
+accessToken : string;
+};
 
 async function getToken() {
-    if(userToken === '') {
-        const token = await fetch('https://simple-books-api.glitch.me/api-clients',auth);
+    if(userToken.accessToken !== null) {
+        const token = await fetch('https://simple-books-api.glitch.me/api-clients',{
+            method:'POST',
+            headers:{
+                "Content-Type": 'application/json'
+            },
+            body: JSON.stringify(auth)
+        });
         if(token.ok) {
-            userToken = await token.json();
-            return userToken;
+            userToken.accessToken = await token.json();
+            return userToken.accessToken;
         } else if(!token.ok)
           {
             return {message:'no token found'}
@@ -23,10 +31,11 @@ async function getToken() {
 } 
 
 export default async  function Auth() {
-  //const token = await getToken();
+  const token = await getToken();
+  console.log(token);
     return (
     <div>
-            
+            {token?.toString()}
     </div>
   )
 }
