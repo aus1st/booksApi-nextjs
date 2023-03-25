@@ -55,7 +55,7 @@ export default async function Books() {
             ))
         }
       </ul>
-      <Auth></Auth>
+     
     </div>
   )
 }

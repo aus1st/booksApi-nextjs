@@ -1,6 +1,9 @@
+import Auth from "./shared/auth";
 
-export default function Home() {
+export default async function Home() {
   return (
-    <></>
+    <>
+    <Auth></Auth>
+    </>
   )
 }
