@@ -49,7 +49,7 @@ export default async function Book({params}: {params:{id:number}}) {
                 <div className='pt-2 flex space-x-2 justify-center'>
                 <Link href="/books" className={`bg-blue-600 text-white py-1 px-4 rounded-md`}>List</Link>
 
-                    <Link href="/order" className={`bg-blue-600 text-white py-1 px-4 rounded-md ${b.available?'cursor-pointer':'cursor-not-allowed'}`}>Order</Link>
+                    <Link href={`/orders/${b.id}`} className={`bg-blue-600 text-white py-1 px-4 rounded-md ${b.available?'cursor-pointer':'cursor-not-allowed'}`}>Order</Link>
 
                 </div>
                 </div>

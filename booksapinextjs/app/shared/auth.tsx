@@ -3,12 +3,12 @@ import {useState} from 'react'
 import { client,userToken } from '../models/client';
 import useSWR from 'swr';
 
-// const auth: client = {
-//     clientName: 'siddiqui',
-//     clientEmail: 'siddiqui@abc.com'
-// }
+const auth: client = {
+    clientName: 'siddiqui',
+    clientEmail: 'siddiqui@abc.com'
+}
 
-const token : userToken = {
+let token : userToken = {
     accessToken:''
 };
 
@@ -19,21 +19,7 @@ const fetcher =(url:string, auth:client) => fetch(url,{
 }).then((res)=> res.json());
 
 async function getToken(auth:client) {
-    if(token.accessToken == '') {
-        console.log(JSON.stringify(auth))
-        //const resp = await fetch('https://simple-books-api.glitch.me/api-clients',{
-        const resp = useSWR('https://simple-books-api.glitch.me/api-clients',fetcher)  
-        
-        if(resp.ok) {
-            token.accessToken = await resp.json();
-            console.log(token.accessToken);
-            return token.accessToken;
-        } else if(!resp.ok)
-          {
-            console.log('no token test')
-            return {message:'no token found'}
-        }
-    } else return token.accessToken;
+   
     
 } 
 
@@ -41,6 +27,8 @@ export default function Auth() {
 //   const token = await getToken();
 let [clientName, setName] = useState("");
 let [clientEmail, setEmail] = useState("");
+const {data,error,isLoading} = useSWR('https://simple-books-api.glitch.me/api-clients',fetcher)  
+
 //   console.log(token);
     return (
   

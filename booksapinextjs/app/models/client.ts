@@ -6,3 +6,8 @@ export interface client {
 export interface userToken {
     accessToken : string;
     };
+
+export interface newOrder{
+    bookId: number,
+    customerName: string
+}

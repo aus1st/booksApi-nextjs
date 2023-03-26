@@ -45,7 +45,7 @@ export default async function Books() {
                 </div>
                 <div className='pt-2 flex space-x-2 justify-center'>
                     <Link href={`/books/${b.id}`} className='bg-blue-600 text-white py-1 px-4 rounded-md'>Details</Link>
-                    <Link href="#" className='bg-blue-600 text-white py-1 px-4 rounded-md'>Order</Link>
+                    <Link href={`/orders/${b.id}`} className='bg-blue-600 text-white py-1 px-4 rounded-md'>Order</Link>
 
                 </div>
                 </div>
