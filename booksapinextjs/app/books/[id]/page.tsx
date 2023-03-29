@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import { book } from '@/app/models/book';
 import Link from 'next/link'
+import PlaceOrder from '@/app/shared/placeOrder';
 
 const baseUrl = 'https://simple-books-api.glitch.me/books/'
 
@@ -49,8 +50,8 @@ export default async function Book({params}: {params:{id:number}}) {
                 <div className='pt-2 flex space-x-2 justify-center'>
                 <Link href="/books" className={`bg-blue-600 text-white py-1 px-4 rounded-md`}>List</Link>
 
-                    <Link href={`/orders/order/${b.id}`} className={`bg-blue-600 text-white py-1 px-4 rounded-md ${b.available?'cursor-pointer':'cursor-not-allowed'}`}>Order</Link>
-
+                    {/* <Link href={`/orders/order/${b.id}`} className={`bg-blue-600 text-white py-1 px-4 rounded-md ${b.available?'cursor-pointer':'cursor-not-allowed'}`}>Order</Link> */}
+                    <PlaceOrder {...{bookId:b.id,customerName:'ahmed'}}></PlaceOrder>
                 </div>
                 </div>
     </div>

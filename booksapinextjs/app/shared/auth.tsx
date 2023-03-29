@@ -1,7 +1,7 @@
 'use client'
 import {useState} from 'react'
 import { client,userToken } from '../models/client';
-import useSWR from 'swr';
+
 
 const auth: client = {
     clientName: 'siddiqui',
@@ -27,7 +27,7 @@ export default function Auth() {
 //   const token = await getToken();
 let [clientName, setName] = useState("");
 let [clientEmail, setEmail] = useState("");
-const {data,error,isLoading} = useSWR('https://simple-books-api.glitch.me/api-clients',fetcher)  
+//const {data,error,isLoading} = useSWR('https://simple-books-api.glitch.me/api-clients',fetcher)  
 
 //   console.log(token);
     return (

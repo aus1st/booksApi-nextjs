@@ -4,7 +4,8 @@ import Image from "next/image";
 import { book } from "@/app/models/book";
 import Link from "next/link";
 import { newOrder } from "@/app/models/client";
-import useSWR from 'swr';
+import PlaceOrder from "@/app/shared/placeOrder";
+
 
 const baseUrl = "https://simple-books-api.glitch.me/";
 
@@ -105,7 +106,7 @@ export  default async function Order({ params }: { params: { id: number } }) {
           </ul>
         </div>
 
-        <div className="relative mb-6" data-te-input-wrapper-init>
+        {/* <div className="relative mb-6" data-te-input-wrapper-init>
           <label>Your Name</label>
           <input
             type="text"
@@ -115,23 +116,16 @@ export  default async function Order({ params }: { params: { id: number } }) {
             id="customerName"
             placeholder="Name"
           />
-        </div>
+        </div> */}
 
         <div className="pt-2 flex space-x-2 justify-center">
-          <Link
-            href="/books"
-            className={`bg-blue-600 text-white py-1 px-4 rounded-md`}
+          <Link href="/books" className={`bg-blue-600 text-white py-1 px-4 rounded-md`}
           >
             List
           </Link>
+          <PlaceOrder {...{bookId: b.id, customerName:'ahmed'}}/>
 
-          <button
-            type="button" 
-            //onClick={async () => await PlaceNewOrder({ customerName, bookId })}
-            className={`bg-blue-600 text-white py-1 px-4 rounded-md`}
-          >
-            Place Order
-          </button>
+         {/* <PlaceOrder bookId={b.id} customerName={"ahmed"}/> */}
         </div>
       </div>
     </div>

@@ -11,7 +11,7 @@ export default function Navbar() {
   return (
     <div className='bg-white stick top-0 flex justify-end p-5 m-2 shadow-md items-center '>
      
-     <Link href='/'>
+     <Link href='/books'>
      <h2 className='text-lg font-semibold mr-4'>BOOKS API</h2>
 </Link>
       <ul className='flex  font-semibold space-x-4'>
